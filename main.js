@@ -101,15 +101,7 @@ function sendStatusToWindow(text) {
   log.info(text);
   mainWindow.webContents.send('message', text);
 }
-function createDefaultWindow() {
-  mainWindow = new BrowserWindow();
-  mainWindow.webContents.openDevTools();
-  mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
-  mainWindow.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
-  return mainWindow;
-}
+
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 })

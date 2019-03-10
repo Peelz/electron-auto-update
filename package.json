@@ -1,12 +1,12 @@
 {
   "name": "electron-auto-update-simple",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "publish": "build --mac -p always",
-    "run-server": "./node_modules/.bin/http-server www-dir -p 8080",
+    "publish": "build -p always",
+    "run-server": "http-server dist -p 8080",
     "sign-dev-electron-app": "codesign --deep --force --verbose --sign - node_modules/electron/dist/Electron.app"
   },
   "repository": "https://github.com/Peelz/electron-auto-update",
